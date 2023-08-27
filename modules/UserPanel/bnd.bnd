@@ -1,0 +1,4 @@
+Bundle-Name: UserPanel
+Bundle-SymbolicName: user.panel
+Bundle-Version: 1.0.0
+Export-Package: user.panel.constants
