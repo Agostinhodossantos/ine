@@ -15,10 +15,22 @@ public class Util {
     }
 
     public static User getUserById(long userId) {
-        System.out.print("UserID: "+userId);
+        List<User> users = UserLocalServiceUtil.getUsers(0, 1000);
+        User user = null;
+
+        for (User u : users) {
+        	if (u.getUserId() == userId) {
+        		user = u;
+        		break;
+        	}
+        }
+       return user;
+    }
+
+    public static User searchUserByName(String name) {
         List<User> users = UserLocalServiceUtil.getUsers(0, 1000);
         return users.stream()
-                .filter(user -> user.getUserId() == userId)
+                .filter(user -> user.getFullName().toLowerCase().contains(name.toLowerCase()))
                 .findFirst()
                 .orElse(null);
     }

@@ -1,6 +1,7 @@
 package user.panel.portlet;
 
 import com.liferay.portal.kernel.model.User;
+import com.liferay.portal.kernel.util.ParamUtil;
 import user.panel.constants.UserPanelPortletKeys;
 
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
@@ -10,9 +11,9 @@ import javax.portlet.*;
 import org.osgi.service.component.annotations.Component;
 
 import java.io.IOException;
+import java.util.List;
 
-import static user.panel.util.Util.getUserById;
-import static user.panel.util.Util.getUsers;
+import static user.panel.util.Util.*;
 
 /**
  * @author HP
@@ -43,8 +44,23 @@ public class UserPanelPortlet extends MVCPortlet {
 		String bookId = actionRequest.getParameter("bookId");
 		User user = getUserById(Long.parseLong(bookId));
 
-		actionRequest.setAttribute("user", user);
+		actionRequest.setAttribute("current", user);
 		actionResponse.setRenderParameter("jspPage", "/biography.jsp");
+	}
+
+	@ProcessAction(name = "searchUsers")
+	public void searchUsers(ActionRequest actionRequest, ActionResponse actionResponse) {
+		String searchQuery = ParamUtil.getString(actionRequest, "search");
+
+		User user = searchUserByName(searchQuery);
+
+		System.out.println(searchQuery);
+
+		if (user != null) {
+			actionRequest.setAttribute("current", user);
+			actionResponse.setRenderParameter("jspPage", "/biography.jsp");
+		}
+
 	}
 
 }

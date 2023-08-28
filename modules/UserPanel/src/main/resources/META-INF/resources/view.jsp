@@ -9,12 +9,14 @@
 						<h2> <b>Usuarios</b></h2>
 					</div>
 					<div class="col-sm-7">
+						<form action="<portlet:actionURL name='searchUsers' />" method="GET" cssClass="input-group">
 						<div class="input-group">
-							<input type="text" class="form-control" placeholder="Nome" aria-label="Pesquisar" aria-describedby="basic-addon2">
+							<input type="text" class="form-control" name="search" placeholder="Nome" aria-label="Pesquisar" aria-describedby="basic-addon2">
 							<div class="input-group-append">
-								<button class="btn btn-outline-secondary" type="button">Pesquisar</button>
+								<button class="btn btn-outline-secondary" type="button"  type="submit">Pesquisar</button>
 							</div>
 						</div>
+						</form>
 					</div>
 				</div>
 			</div>

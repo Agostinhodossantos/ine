@@ -64,9 +64,9 @@
               <div class="d-flex flex-column align-items-center text-center">
                 <img src="https://firebasestorage.googleapis.com/v0/b/ineproject-6d336.appspot.com/o/30-307416_profile-icon-png-image-free-download-searchpng-employee.png?alt=media&token=cc2d0580-a04a-457d-ad73-f1335555c27c" alt="Admin" class="rounded-circle" width="150" height="140" >
                 <div class="mt-3">
-                  <h4>Agostinho ${user.lastName}</h4>
-                  <p class="text-secondary mb-1">${user.emailAddress}</p>
-                  <p class="text-muted font-size-sm"> ${user.jobTitle}</p>
+                  <h4>${current.firstName} ${current.lastName}</h4>
+                  <p class="text-secondary mb-1">${current.emailAddress}</p>
+                  <p class="text-muted font-size-sm"> ${current.jobTitle}</p>
                 </div>
               </div>
             </div>
@@ -81,7 +81,7 @@
                   <h6 class="mb-0">Nome</h6>
                 </div>
                 <div class="col-sm-9 text-secondary">
-                  ${user.firstName} ${user.lastName}
+                  ${current.firstName} ${current.lastName}
                 </div>
               </div>
               <hr>
@@ -90,7 +90,7 @@
                   <h6 class="mb-0">Email</h6>
                 </div>
                 <div class="col-sm-9 text-secondary">
-                  ${user.emailAddress}
+                  ${current.emailAddress}
                 </div>
               </div>
               <hr>
@@ -108,7 +108,7 @@
                   <h6 class="mb-0">Cargo</h6>
                 </div>
                 <div class="col-sm-9 text-secondary">
-                  ${user.jobTitle}
+                  ${current.jobTitle}
                 </div>
               </div>
               <hr>
@@ -121,7 +121,7 @@
               <div class="row">
                 <div class="col-sm-12">
                   <p>
-                    ${user.comments }
+                    ${current.comments }
                   </p>
                 </div>
               </div>
