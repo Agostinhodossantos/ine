@@ -30,7 +30,7 @@
 				</tr>
 				</thead>
 				<tbody>
-				<c:forEach items="${users}" var="users" varStatus="loop">
+				<c:forEach items="${searchUsers}" var="users" varStatus="loop">
 					<tr>
 						<td>${loop.index + 1}</td>
 						<td>
@@ -46,7 +46,7 @@
 				</tbody>
 			</table>
 			<div class="clearfix">
-				<div class="hint-text">Showing <b>${users.size()}</b> out of <b>${users.size()}</b> entries</div>
+				<div class="hint-text">Showing <b>${searchUsers.size()}</b> out of <b>${searchUsers.size()}</b> entries</div>
 				<ul class="pagination">
 					<li class="page-item disabled"><a href="#">Previous</a></li>
 					<li class="page-item active"><a href="#" class="page-link">1</a></li>

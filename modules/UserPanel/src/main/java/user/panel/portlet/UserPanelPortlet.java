@@ -59,7 +59,7 @@ public class UserPanelPortlet extends MVCPortlet {
 
 		if (users != null) {
 			System.out.println("searchUsers: " + users);
-			actionRequest.setAttribute("users", getUsers());
+			actionRequest.setAttribute("searchUsers", users);
 			actionResponse.setRenderParameter("jspPage", "/search_result.jsp");
 		}
 
