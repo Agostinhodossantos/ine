@@ -27,12 +27,17 @@ public class Util {
        return user;
     }
 
-    public static User searchUserByName(String name) {
+    public static List<User> searchUserByName(String name) {
         List<User> users = UserLocalServiceUtil.getUsers(0, 1000);
-        return users.stream()
-                .filter(user -> user.getFullName().toLowerCase().contains(name.toLowerCase()))
-                .findFirst()
-                .orElse(null);
+        List<User> usersList = null;
+
+        for (User u : users) {
+        	if (u.getFullName().toLowerCase().contains(name.toLowerCase())) {
+        		usersList.add(u);
+        	}
+        }
+
+        return usersList;
     }
 
 }

@@ -6,7 +6,7 @@
 			<div class="table-title">
 				<div class="row">
 					<div class="col-sm-5">
-						<h2> <b>Usuarios</b></h2>
+						<h2> <b>Resultado</b></h2>
 					</div>
 					<div class="col-sm-7">
 						<form action="<portlet:actionURL name='searchUsers' />" method="post" cssClass="input-group">

@@ -52,13 +52,15 @@ public class UserPanelPortlet extends MVCPortlet {
 	public void searchUsers(ActionRequest actionRequest, ActionResponse actionResponse) {
 		String searchQuery = ParamUtil.getString(actionRequest, "search");
 
-		User user = searchUserByName(searchQuery);
+		System.out.println("searchUsers: " + searchQuery);
 
-		System.out.println(searchQuery);
+		List<User> users = searchUserByName(searchQuery);
 
-		if (user != null) {
-			actionRequest.setAttribute("current", user);
-			actionResponse.setRenderParameter("jspPage", "/biography.jsp");
+
+		if (users != null) {
+			System.out.println("searchUsers: " + users);
+			actionRequest.setAttribute("users", getUsers());
+			actionResponse.setRenderParameter("jspPage", "/search_result.jsp");
 		}
 
 	}
