@@ -9,14 +9,8 @@
 						<h2> <b>Resultado</b></h2>
 					</div>
 					<div class="col-sm-7">
-						<form action="<portlet:actionURL name='searchUsers' />" method="post" cssClass="input-group">
-						<div class="input-group">
-							<input type="text" class="form-control" name="<portlet:namespace />search" placeholder="Nome" aria-label="Pesquisar" aria-describedby="basic-addon2">
-							  <div class="input-group-append">
-								<button class="btn btn-outline-secondary" type="submit">Pesquisar</button>
-							  </div>
-						</div>
-						</form>
+
+
 					</div>
 				</div>
 			</div>
